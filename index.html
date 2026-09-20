@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RemindMe | Tagesplaner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Heute</p>
+          <h1 id="todayLabel">-</h1>
+        </div>
+        <div class="summary" aria-live="polite">
+          <span id="openCount">0 offen</span>
+          <span id="doneCount">0 erledigt</span>
+        </div>
+      </header>
+
+      <section class="quick-add" aria-label="Neue Aufgabe schnell hinzufügen">
+        <form id="taskForm">
+          <label class="sr-only" for="taskInput">Neue Aufgabe</label>
+          <input
+            id="taskInput"
+            name="taskInput"
+            type="text"
+            maxlength="120"
+            placeholder="Aufgabe eingeben und mit Enter speichern..."
+            autocomplete="off"
+          />
+          <button type="submit" id="submitButton">Hinzufügen</button>
+          <button type="button" id="cancelEditButton" class="secondary hidden" aria-label="Bearbeitung abbrechen">
+            Abbrechen
+          </button>
+        </form>
+      </section>
+
+      <section class="list-panel" aria-live="polite">
+        <div class="list-header">
+          <h2>To-Dos für heute</h2>
+        </div>
+        <ul id="taskList" class="task-list"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
