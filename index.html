@@ -30,6 +30,20 @@
             placeholder="Aufgabe eingeben und mit Enter speichern..."
             autocomplete="off"
           />
+
+          <label class="sr-only" for="prioritySelect">Priorität</label>
+          <select id="prioritySelect" name="prioritySelect" aria-label="Priorität wählen">
+            <option value="high">Hoch</option>
+            <option value="medium" selected>Mittel</option>
+            <option value="low">Niedrig</option>
+          </select>
+
+          <label class="sr-only" for="reminderDate">Erinnerungsdatum</label>
+          <input id="reminderDate" name="reminderDate" type="date" aria-label="Erinnerungsdatum" />
+
+          <label class="sr-only" for="reminderTime">Erinnerungszeit</label>
+          <input id="reminderTime" name="reminderTime" type="time" aria-label="Erinnerungszeit" />
+
           <button type="submit" id="submitButton">Hinzufügen</button>
           <button type="button" id="cancelEditButton" class="secondary hidden" aria-label="Bearbeitung abbrechen">
             Abbrechen
@@ -42,6 +56,13 @@
           <h2>To-Dos für heute</h2>
         </div>
         <ul id="taskList" class="task-list"></ul>
+      </section>
+
+      <section class="done-panel" aria-live="polite">
+        <div class="list-header done-header">
+          <h2>Erledigt</h2>
+        </div>
+        <ul id="doneList" class="task-list done-list"></ul>
       </section>
     </main>
 
